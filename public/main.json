@@ -20,7 +20,7 @@
                 "options": {
                     "url": "https://api.github.com/repos/optio/sopmob/commits",
                     "header": {
-                        "secret-key": "sdfsdfdsfs"
+                        "secret-key": "sdfsdfdddsdsfs"
                     }
                 }
             }
