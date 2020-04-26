@@ -90,7 +90,7 @@
                                     },
                                     "text": "Demo ToDo",
                                     "href": {
-                                        "url": "https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/todo-app/home.json",
+                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/home.json",
                                         "fresh": true
                                     }
                                 }
