@@ -47,37 +47,33 @@
                   ]
                 },
                 "items": {
-                  "{{#each $jason}}": {
-                    "type": "horizontal",
-                    "components": [
-                      {
+                    "{{#each $jason}}": {
+
                         "type": "vertical",
                         "style": {
-                          "spacing": "5"
+                            "spacing": "5"
                         },
                         "components": [
-                          {
+                            {
                             "type": "label",
                             "text": "{{$(this).sha.text()}}",
                             "style": {
-                              "font": "HelveticaNeue-Bold",
-                              "color": "#ff6600",
-                              "size": "16"
+                                "font": "HelveticaNeue-Bold",
+                                "color": "#ff6600",
+                                "size": "16"
                             }
-                          },
-                          {
+                            },
+                            {
                             "type": "label",
                             "style": {
-                              "color": "#aaaaaa",
-                              "font": "HelveticaNeue",
-                              "size": "13"
+                                "color": "#aaaaaa",
+                                "font": "HelveticaNeue",
+                                "size": "13"
                             },
                             "text": "{{$(this).sha}}"
-                          }
+                            }
                         ]
-                      }
-                    ]
-                  }
+                    }
                 }
               }
             ]
