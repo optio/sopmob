@@ -30,22 +30,6 @@
           "body": {
             "sections": [
               {
-                "header": {
-                  "type": "horizontal",
-                  "style": {
-                    "background": "rgba(14,122,254,0.1)",
-                    "padding": "20"
-                  },
-                  "components": [
-                    {
-                      "style": {
-                        "size": "12"
-                      },
-                      "type": "label",
-                      "text": "This demo parses an HTML content loaded from Hacker News (https://news.ycombinator.com) and renders it into native view"
-                    }
-                  ]
-                },
                 "items": {
                     "{{#each $jason}}": {
 
@@ -56,7 +40,7 @@
                         "components": [
                             {
                             "type": "label",
-                            "text": "{{$(this).sha.text()}}",
+                            "text": "{{sha}}",
                             "style": {
                                 "font": "HelveticaNeue-Bold",
                                 "color": "#ff6600",
