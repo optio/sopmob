@@ -1,7 +1,7 @@
 {
     "$jason": {
         "head": {
-            "title": "{ ˃̵̑ᴥ˂̵̑}",
+            "title": "SOP Mob",
             "actions": {
                 "$foreground": {
                     "type": "$reload"
@@ -31,26 +31,7 @@
                             "components": [
                                 {
                                     "type": "label",
-                                    "text": "Vertical item 1",
-                                    "style": {
-                                        "align": "center",
-                                        "font": "Courier-Bold",
-                                        "size": 26
-                                    }
-                                },
-                                {
-                                    "type": "label",
-                                    "text": "Vertical item 2",
-                                    "style": {
-                                        "align": "center",
-                                        "font": "Courier",
-                                        "padding": 30,
-                                        "size": 20
-                                    }
-                                },
-                                {
-                                    "type": "label",
-                                    "text": "Vertical item 3",
+                                    "text": "SOP Mob",
                                     "style": {
                                         "align": "center",
                                         "font": "HelveticaNeue-Bold",
@@ -59,35 +40,61 @@
                                 }
                             ]
                         },
+
                         {
-                            "type": "label",
+                            "type": "vertical",
                             "style": {
-                                "align": "center",
-                                "padding": 10,
-                                "color": "#000000",
-                                "font": "HelveticaNeue",
-                                "size": 20
+                                "padding": 30,
+                                "spacing": 20,
+                                "align": "center"
                             },
-                            "text": "SOP Mob",
-                            "href": {
-                                "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
-                                "fresh": true
-                            }
-                        },
-                        {
-                            "type": "label",
-                            "style": {
-                                "align": "center",
-                                "padding": 10,
-                                "color": "#000000",
-                                "font": "HelveticaNeue",
-                                "size": 20
-                            },
-                            "text": "Check out Live DEMO",
-                            "href": {
-                                "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
-                                "fresh": true
-                            }
+                            "components": [
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "SOP Mob",
+                                    "href": {
+                                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
+                                        "fresh": true
+                                    }
+                                },
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "Jasonette Demo's",
+                                    "href": {
+                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
+                                        "fresh": true
+                                    }
+                                },
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "Demo ToDo",
+                                    "href": {
+                                        "url": "https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/todo-app",
+                                        "fresh": true
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
