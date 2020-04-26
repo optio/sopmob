@@ -1,136 +1,127 @@
+
 {
     "$jason": {
-        "head": {
-            "title": "SOP Mob",
-
-                "$pull": {
-                    "trigger": "reload"
-                },
-                "$foreground": {
-                    "trigger": "load"
-                },
-                "$show": {
-                    "trigger": "load"
-                },
-                "reload": {
-                    "type": "$href",
-                    "options": {
-                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
-                    }
-                },
-                "load": {
-                    "type": "$network.request",
-                    "options": {
-                        "url": "https://api.github.com/repos/optio/sopmob/commits",
-                        "dataType": "json"
-                    },
-                    "success": {
-                        "type": "$render",
-                        "options": {
-                            "type": "html"
-                        },
-                        "success": {
-                            "type": "$util.toast",
-                            "options": {
-                                "text": "Refreshed"
-                            }
-                        }
-                    }
+      "head": {
+        "title": "SOP Mob",
+        "actions": {
+          "$pull": {
+            "trigger": "reload"
+          },
+          "$show": {
+            "trigger": "reload"
+          },
+          "reload": {
+            "type": "$network.request",
+            "options": {
+              "url": "https://news.ycombinator.com/newest",
+              "dataType": "html"
+            },
+            "success": {
+              "type": "$render",
+              "options": {
+                "type": "html"
+              },
+              "success": {
+                "type": "$util.toast",
+                "options": {
+                  "text": "Refreshed"
                 }
-
+              }
             }
+          }
         },
-        "body": {
-            "header": {
-                "style": {
-                    "theme": true
-                }
-            },
-            "style": {
-                "background": "#ffffff",
-                "border": "none"
-            },
+        "templates": {
+          "body": {
             "sections": [
-                {
-                    "items": [
+              {
+                "header": {
+                  "type": "horizontal",
+                  "style": {
+                    "background": "rgba(14,122,254,0.1)",
+                    "padding": "20"
+                  },
+                  "components": [
+                    {
+                      "style": {
+                        "size": "12"
+                      },
+                      "type": "label",
+                      "text": "This demo parses an HTML content loaded from Hacker News (https://news.ycombinator.com) and renders it into native view"
+                    }
+                  ]
+                },
+                "items": {
+                  "{{#each $jason.find('tr.athing')}}": {
+                    "type": "horizontal",
+                    "href": {
+                      "url": "https://news.ycombinator.com/{{$(this).next().find('.subtext .age a').attr('href')}}",
+                      "view": "Web"
+                    },
+                    "menu": {
+                      "items": [
                         {
-                            "type": "vertical",
-                            "style": {
-                                "padding": 30,
-                                "spacing": 20,
-                                "align": "center"
-                            },
-                            "components": [
-                                {
-                                    "type": "label",
-                                    "text": "SOP Mob v2",
-                                    "style": {
-                                        "align": "center",
-                                        "font": "HelveticaNeue-Bold",
-                                        "size": 50
-                                    }
-                                }
-                            ]
-                        },
-
-                        {
-                            "type": "vertical",
-                            "style": {
-                                "padding": 30,
-                                "spacing": 20,
-                                "align": "center"
-                            },
-                            "components": [
-                                {
-                                    "type": "label",
-                                    "style": {
-                                        "align": "center",
-                                        "padding": 10,
-                                        "color": "#000000",
-                                        "font": "HelveticaNeue",
-                                        "size": 20
-                                    },
-                                    "text": "SOP Mob",
-                                    "href": {
-                                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
-                                        "fresh": true
-                                    }
-                                },
-                                {
-                                    "type": "label",
-                                    "style": {
-                                        "align": "center",
-                                        "padding": 10,
-                                        "color": "#000000",
-                                        "font": "HelveticaNeue",
-                                        "size": 20
-                                    },
-                                    "text": "Jasonette Demo's",
-                                    "href": {
-                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
-                                        "fresh": true
-                                    }
-                                },
-                                {
-                                    "type": "label",
-                                    "style": {
-                                        "align": "center",
-                                        "padding": 10,
-                                        "color": "#000000",
-                                        "font": "HelveticaNeue",
-                                        "size": 20
-                                    },
-                                    "text": "Demo ToDo",
-                                    "href": {
-                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/home.json",
-                                        "fresh": true
-                                    }
-                                }
-                            ]
+                          "text": "Visit\nSite",
+                          "action": {
+                            "type": "$href",
+                            "options": {
+                              "url": "{{$(this).find('td.title a').attr('href')}}",
+                              "view": "Web"
+                            }
+                          }
                         }
+                      ]
+                    },
+                    "style": {
+                      "padding": "4",
+                      "spacing": "10",
+                      "color": "#ff6600",
+                      "background": "rgb(246, 246, 239)"
+                    },
+                    "components": [
+                      {
+                        "type": "label",
+                        "style": {
+                          "font": "HelveticaNeue-Bold",
+                          "size": "10",
+                          "padding": "10",
+                          "width": "50"
+                        },
+                        "text": "{{($(this).next().find('.subtext .score').text().split(' ')[0]).toString()+'\\npoints'}}"
+                      },
+                      {
+                        "type": "vertical",
+                        "style": {
+                          "spacing": "5"
+                        },
+                        "components": [
+                          {
+                            "type": "label",
+                            "text": "{{$(this).find('td.title > a').text()}}",
+                            "style": {
+                              "font": "HelveticaNeue-Bold",
+                              "color": "#ff6600",
+                              "size": "16"
+                            }
+                          },
+                          {
+                            "type": "label",
+                            "style": {
+                              "color": "#aaaaaa",
+                              "font": "HelveticaNeue",
+                              "size": "13"
+                            },
+                            "text": "{{$(this).find('td.title .sitebit').text() + '   ' + $(this).next().find('.subtext').find(':nth-child(3)').text()}}"
+                          }
+                        ]
+                      }
                     ]
+                  }
                 }
+              }
             ]
+          }
         }
+      }
     }
-}
+  }
+  
