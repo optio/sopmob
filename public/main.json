@@ -116,7 +116,7 @@
                                             },
                                             "text": "SOP Mob S3",
                                             "href": {
-                                                "url": "http://sopmob.mijnesite.be.s3-website-eu-west-1.amazonaws.com/main.json",
+                                                "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/main.json",
                                                 "fresh": true
                                             }
                                         },
