@@ -101,7 +101,7 @@
                                             },
                                             "text": "SOP Mob",
                                             "href": {
-                                                "url": "http://sopmob.mijnesite.be/main.json",
+                                                "url": "https://sopmob.mijnesite.be/main.json",
                                                 "fresh": true
                                             }
                                         },
