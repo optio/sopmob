@@ -1,0 +1,136 @@
+{
+    "$jason": {
+        "head": {
+            "title": "SOP Mob",
+
+                "$pull": {
+                    "trigger": "reload"
+                },
+                "$foreground": {
+                    "trigger": "load"
+                },
+                "$show": {
+                    "trigger": "load"
+                },
+                "reload": {
+                    "type": "$href",
+                    "options": {
+                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
+                    }
+                },
+                "load": {
+                    "type": "$network.request",
+                    "options": {
+                        "url": "https://api.github.com/repos/optio/sopmob/commits",
+                        "dataType": "json"
+                    },
+                    "success": {
+                        "type": "$render",
+                        "options": {
+                            "type": "html"
+                        },
+                        "success": {
+                            "type": "$util.toast",
+                            "options": {
+                                "text": "Refreshed"
+                            }
+                        }
+                    }
+                }
+
+            }
+        },
+        "body": {
+            "header": {
+                "style": {
+                    "theme": true
+                }
+            },
+            "style": {
+                "background": "#ffffff",
+                "border": "none"
+            },
+            "sections": [
+                {
+                    "items": [
+                        {
+                            "type": "vertical",
+                            "style": {
+                                "padding": 30,
+                                "spacing": 20,
+                                "align": "center"
+                            },
+                            "components": [
+                                {
+                                    "type": "label",
+                                    "text": "SOP Mob v2",
+                                    "style": {
+                                        "align": "center",
+                                        "font": "HelveticaNeue-Bold",
+                                        "size": 50
+                                    }
+                                }
+                            ]
+                        },
+
+                        {
+                            "type": "vertical",
+                            "style": {
+                                "padding": 30,
+                                "spacing": 20,
+                                "align": "center"
+                            },
+                            "components": [
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "SOP Mob",
+                                    "href": {
+                                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
+                                        "fresh": true
+                                    }
+                                },
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "Jasonette Demo's",
+                                    "href": {
+                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
+                                        "fresh": true
+                                    }
+                                },
+                                {
+                                    "type": "label",
+                                    "style": {
+                                        "align": "center",
+                                        "padding": 10,
+                                        "color": "#000000",
+                                        "font": "HelveticaNeue",
+                                        "size": 20
+                                    },
+                                    "text": "Demo ToDo",
+                                    "href": {
+                                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/home.json",
+                                        "fresh": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

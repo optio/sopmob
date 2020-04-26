@@ -18,10 +18,7 @@
             "success": {
                 "type": "$href",
                 "options": {
-                    "url": "https://api.github.com/repos/optio/sopmob/commits",
-                    "header": {
-                        "secret-key": "sdfsdfdddsdsfs"
-                    }
+                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
                 }
             }
           },
@@ -108,7 +105,7 @@
                                 },
                                 "text": "SOP Mob",
                                 "href": {
-                                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
+                                    "url": "http://sopmob.mijnesite.be/main.json",
                                     "fresh": true
                                 }
                             },
