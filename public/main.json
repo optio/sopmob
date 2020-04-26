@@ -54,7 +54,7 @@
                                 "font": "HelveticaNeue",
                                 "size": "13"
                             },
-                            "text": "{{$(this).sha}}"
+                            "text": "{{commit.author.date}}"
                             }
                         ]
                     }
