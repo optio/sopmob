@@ -18,7 +18,10 @@
             "success": {
                 "type": "$href",
                 "options": {
-                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
+                    "url": "https://api.jsonbin.io/b/5ea54d002940c704e1decfdd",
+                    "header": {
+                        "secret-key": "$2b$10$PGbuOyfojq1olq7s/GBtSO7cQsXXATprFiAc.2UyatXcRa0NDnDG2"
+                    }
                 }
             }
           },
