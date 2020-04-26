@@ -2,16 +2,42 @@
     "$jason": {
         "head": {
             "title": "SOP Mob",
-            "actions": {
-                "$foreground": {
-                    "type": "$reload"
-                },
+
                 "$pull": {
+                    "trigger": "reload"
+                },
+                "$foreground": {
+                    "trigger": "load"
+                },
+                "$show": {
+                    "trigger": "load"
+                },
+                "reload": {
                     "type": "$href",
                     "options": {
-                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
+                        "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
+                    }
+                },
+                "load": {
+                    "type": "$network.request",
+                    "options": {
+                        "url": "https://api.github.com/repos/optio/sopmob/commits",
+                        "dataType": "json"
+                    },
+                    "success": {
+                        "type": "$render",
+                        "options": {
+                            "type": "html"
+                        },
+                        "success": {
+                            "type": "$util.toast",
+                            "options": {
+                                "text": "Refreshed"
+                            }
+                        }
                     }
                 }
+
             }
         },
         "body": {
