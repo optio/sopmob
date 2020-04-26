@@ -7,22 +7,34 @@
           "$pull": {
             "trigger": "reload"
           },
+          "$foreground": {
+            "trigger": "reload"
+          },
           "$show": {
             "trigger": "reload"
           },
           "reload": {
-            "type": "$network.request",
-            "options": {
-              "url": "https://api.github.com/repos/optio/sopmob/commits"
-            },
+            "type": "$flush",
             "success": {
-              "type": "$render",
-              "success": {
-                "type": "$util.toast",
+                "type": "$href",
                 "options": {
-                  "text": "Refreshed"
+                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json"
+                },
+                "success": {
+                    "type": "$network.request",
+                    "options": {
+                      "url": "https://api.github.com/repos/optio/sopmob/commits"
+                    },
+                    "success": {
+                        "type": "$render",
+                        "success": {
+                            "type": "$util.toast",
+                            "options": {
+                                "text": "Refreshed"
+                            }
+                        }
+                    }
                 }
-              }
             }
           }
         },
