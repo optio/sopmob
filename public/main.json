@@ -52,26 +52,98 @@
                         "components": [
                             {
                             "type": "label",
-                            "text": "{{sha}}",
+                            "text": "{{commit.author.date}} {{commit.message}}",
                             "style": {
                                 "font": "HelveticaNeue-Bold",
-                                "color": "#ff6600",
-                                "size": "16"
-                            }
-                            },
-                            {
-                            "type": "label",
-                            "style": {
                                 "color": "#aaaaaa",
-                                "font": "HelveticaNeue",
-                                "size": "13"
-                            },
-                            "text": "{{commit.author.date}}"
+                                "size": "10"
+                                }
                             }
                         ]
                     }
                 }
-              }
+              },
+
+              {
+                "items": [
+                    {
+                        "type": "vertical",
+                        "style": {
+                            "padding": 30,
+                            "spacing": 20,
+                            "align": "center"
+                        },
+                        "components": [
+                            {
+                                "type": "label",
+                                "text": "SOP Mob v2",
+                                "style": {
+                                    "align": "center",
+                                    "font": "HelveticaNeue-Bold",
+                                    "size": 50
+                                }
+                            }
+                        ]
+                    },
+
+                    {
+                        "type": "vertical",
+                        "style": {
+                            "padding": 30,
+                            "spacing": 20,
+                            "align": "center"
+                        },
+                        "components": [
+                            {
+                                "type": "label",
+                                "style": {
+                                    "align": "center",
+                                    "padding": 10,
+                                    "color": "#000000",
+                                    "font": "HelveticaNeue",
+                                    "size": 20
+                                },
+                                "text": "SOP Mob",
+                                "href": {
+                                    "url": "https://raw.githubusercontent.com/optio/sopmob/master/public/main.json",
+                                    "fresh": true
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "style": {
+                                    "align": "center",
+                                    "padding": 10,
+                                    "color": "#000000",
+                                    "font": "HelveticaNeue",
+                                    "size": 20
+                                },
+                                "text": "Jasonette Demo's",
+                                "href": {
+                                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
+                                    "fresh": true
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "style": {
+                                    "align": "center",
+                                    "padding": 10,
+                                    "color": "#000000",
+                                    "font": "HelveticaNeue",
+                                    "size": 20
+                                },
+                                "text": "Demo ToDo",
+                                "href": {
+                                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/home.json",
+                                    "fresh": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+
             ]
           }
         }
