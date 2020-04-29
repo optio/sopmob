@@ -34,65 +34,132 @@
                 "sections": [
                     {
                         "items": {
-                            "type": "vertical",
-                            "style": {
-                                "padding": 30,
-                                "spacing": 20,
-                                "align": "center"
-                            },
-                            "components": [
-                                {
-                                    "type": "label",
-                                    "text": "Sign in 3",
-                                    "style": {
-                                        "align": "center",
-                                        "font": "HelveticaNeue-Bold",
-                                        "size": 50
-                                    },
-                                    "action": {
-                                        "type": "$network.request",
-                                        "options": {
-                                            "url": "https://postman-echo.com/basic-auth",
-                                            "method": "get",
-                                            "header": {
-                                                "Authorization": "Basic cG9zdG1hbjpwYXNzd29yZA=="
-                                            }
-                                        },
-                                        "success": {
-                                            "type": "$session.set",
-                                            "options": {
-                                                "domain": "https://postman-echo.com/",
-                                                "header": {
-                                                    "X-User-Email": "{{$jason.email}}",
-                                                    "X-User-Token": "{{$jason.authentication_token}}"
-                                                }
-                                            },
-                                            "success": {
-                                                "type": "$href",
-                                                "options": {
-                                                    "url": "https://docs.postman-echo.com/",
-                                                    "transition": "replace"
-                                                }
-                                            },
-                                            "error": {
-                                                "type": "$util.banner",
-                                                "options": {
-                                                    "title": "Error",
-                                                    "description": "Something went wrong. Please check if you entered your email and password correctly"
-                                                }
-                                            }
-                                        },
-                                        "error": {
-                                            "type": "$util.banner",
-                                            "options": {
-                                                "title": "Error",
-                                                "description": "Something went wrong. Please check if you entered your email and password correctly"
-                                            }
+                            "{{#each $jason}}": {
+                                "type": "vertical",
+                                "style": {
+                                    "spacing": "5"
+                                },
+                                "components": [
+                                    {
+                                        "type": "label",
+                                        "text": "{{commit.author.date}} {{commit.message}}",
+                                        "style": {
+                                            "font": "HelveticaNeue-Bold",
+                                            "color": "#aaaaaa",
+                                            "size": "10"
                                         }
                                     }
-                                }
-                            ]
+                                ]
+                            }
                         }
+                    },
+                    {
+                        "items": [
+                            {
+                                "type": "vertical",
+                                "style": {
+                                    "padding": 30,
+                                    "spacing": 20,
+                                    "align": "center"
+                                },
+                                "components": [
+                                    {
+                                        "type": "label",
+                                        "text": "SOP Mob v2",
+                                        "style": {
+                                            "align": "center",
+                                            "font": "HelveticaNeue-Bold",
+                                            "size": 50
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "vertical",
+                                "style": {
+                                    "padding": 30,
+                                    "spacing": 20,
+                                    "align": "center"
+                                },
+                                "components": [
+                                    {
+                                        "type": "label",
+                                        "style": {
+                                            "align": "center",
+                                            "padding": 10,
+                                            "color": "#000000",
+                                            "font": "HelveticaNeue",
+                                            "size": 24
+                                        },
+                                        "text": "SOP Mob Test",
+                                        "href": {
+                                            "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/login.json",
+                                            "fresh": true
+                                        }
+                                    },
+                                    {
+                                        "type": "label",
+                                        "style": {
+                                            "align": "center",
+                                            "padding": 10,
+                                            "color": "#000000",
+                                            "font": "HelveticaNeue",
+                                            "size": 24
+                                        },
+                                        "text": "SOP Mob Main",
+                                        "href": {
+                                            "url": "https://sopmob.mijnesite.be/main.json",
+                                            "fresh": true
+                                        }
+                                    },
+                                    {
+                                        "type": "label",
+                                        "style": {
+                                            "align": "center",
+                                            "padding": 10,
+                                            "color": "#000000",
+                                            "font": "HelveticaNeue",
+                                            "size": 20
+                                        },
+                                        "text": "SOP Mob S3",
+                                        "href": {
+                                            "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/main.json",
+                                            "fresh": true
+                                        }
+                                    },
+                                    {
+                                        "type": "label",
+                                        "style": {
+                                            "align": "center",
+                                            "padding": 10,
+                                            "color": "#000000",
+                                            "font": "HelveticaNeue",
+                                            "size": 20
+                                        },
+                                        "text": "Jasonette Demo's",
+                                        "href": {
+                                            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jasonpedia/demo.json",
+                                            "fresh": true
+                                        }
+                                    },
+                                    {
+                                        "type": "label",
+                                        "style": {
+                                            "align": "center",
+                                            "padding": 10,
+                                            "color": "#000000",
+                                            "font": "HelveticaNeue",
+                                            "size": 20
+                                        },
+                                        "text": "Demo ToDo",
+                                        "href": {
+                                            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/home.json",
+                                            "fresh": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
