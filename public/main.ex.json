@@ -99,22 +99,7 @@
                                                 "font": "HelveticaNeue",
                                                 "size": 24
                                             },
-                                            "text": "SOP Mob Test",
-                                            "href": {
-                                                "url": "https://sopmob.mijnesite.be/login.json",
-                                                "fresh": true
-                                            }
-                                        },
-                                        {
-                                            "type": "label",
-                                            "style": {
-                                                "align": "center",
-                                                "padding": 10,
-                                                "color": "#000000",
-                                                "font": "HelveticaNeue",
-                                                "size": 24
-                                            },
-                                            "text": "SOP Mob Main",
+                                            "text": "SOP Mob",
                                             "href": {
                                                 "url": "https://sopmob.mijnesite.be/main.json",
                                                 "fresh": true
