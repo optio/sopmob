@@ -33,27 +33,6 @@
             "body": {
                 "sections": [
                     {
-                        "items": {
-                            "{{#each $jason}}": {
-                                "type": "vertical",
-                                "style": {
-                                    "spacing": "5"
-                                },
-                                "components": [
-                                    {
-                                        "type": "label",
-                                        "text": "{{commit.author.date}} {{commit.message}}",
-                                        "style": {
-                                            "font": "HelveticaNeue-Bold",
-                                            "color": "#aaaaaa",
-                                            "size": "10"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
                         "items": [
                             {
                                 "type": "vertical",
