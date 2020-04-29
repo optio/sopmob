@@ -101,7 +101,7 @@
                                             },
                                             "text": "SOP Mob Test",
                                             "href": {
-                                                "url": "https://sopmob.mijnesite.be/login.json",
+                                                "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/login.json",
                                                 "fresh": true
                                             }
                                         },

@@ -10,7 +10,7 @@
           "background": "#646464"
         },
         "header": {
-          "title": "Sign in",
+          "title": "Sign in 2",
           "style": {
             "background": "#646464",
             "color": "#ffffff"
@@ -84,6 +84,13 @@
                   "options": {
                     "url": "https://docs.postman-echo.com/",
                     "transition": "replace"
+                  }
+                },
+                "error": {
+                  "type": "$util.banner",
+                  "options": {
+                    "title": "Error",
+                    "description": "Something went wrong. Please check if you entered your email and password correctly"
                   }
                 }
               },
