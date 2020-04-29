@@ -11,6 +11,21 @@
                             "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/login.json"
                         }
                     }
+                },
+                "$foreground": {
+                    "trigger": "load"
+                },
+                "$show": {
+                    "trigger": "load"
+                },
+                "load": {
+                    "type": "$render",
+                    "success": {
+                        "type": "$util.toast",
+                        "options": {
+                            "text": "Refreshed"
+                        }
+                    }
                 }
             }
         },
