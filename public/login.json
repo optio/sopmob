@@ -2,7 +2,18 @@
 {
     "$jason": {
       "head": {
-        "title": "login"
+        "title": "login",
+        "actions": {
+            "$pull": {
+                "type": "$flush",
+                "success": {
+                    "type": "$href",
+                    "options": {
+                        "url": "https://s3-eu-west-1.amazonaws.com/sopmob.mijnesite.be/login.json"
+                    }
+                }
+            }
+        }
       },
       "body": {
         "style": {
